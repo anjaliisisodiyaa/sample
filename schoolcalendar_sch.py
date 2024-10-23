@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional,Union
 from datetime import date
 
 class SchoolCalendarBase(BaseModel):
@@ -24,7 +24,7 @@ class SchoolCalendarCreate(SchoolCalendarBase):
     pass
 
 class SchoolCalendarUpdate(BaseModel):   
-    date: date | None
+    date: Union[date,None]
     holiday: Optional[str] = None
 
     class Config:
